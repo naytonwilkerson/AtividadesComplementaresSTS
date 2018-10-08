@@ -3,8 +3,13 @@ package br.edu.iftm.atividadeComplementar.domains;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class LancamentoAtividade {
 	
+	@Id
 	private Integer codigo;
 	
 	private Integer quantidadeHoras;
@@ -13,19 +18,14 @@ public class LancamentoAtividade {
 	
 	private Date dataFim;
 	
-	private Aluno aluno;
-	
-	private Atividade atividade;
 
-	public LancamentoAtividade(Integer codigo, Integer quantidadeHoras, Date dataInicio, Date dataFim, Aluno aluno,
-			Atividade atividade) {
+	public LancamentoAtividade(Integer codigo, Integer quantidadeHoras, Date dataInicio, Date dataFim) {
 		super();
 		this.codigo = codigo;
 		this.quantidadeHoras = quantidadeHoras;
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
-		this.aluno = aluno;
-		this.atividade = atividade;
+
 	}
 	
 	public String getSemestreAtividade() {
@@ -80,21 +80,8 @@ public class LancamentoAtividade {
 		this.dataFim = dataFim;
 	}
 
-	public Aluno getAluno() {
-		return aluno;
-	}
 
-	public void setAluno(Aluno aluno) {
-		this.aluno = aluno;
-	}
-
-	public Atividade getAtividade() {
-		return atividade;
-	}
-
-	public void setAtividade(Atividade atividade) {
-		this.atividade = atividade;
-	}
+	
 	
 	
 

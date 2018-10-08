@@ -2,8 +2,13 @@ package br.edu.iftm.atividadeComplementar.domains;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Atividade {
 	
+	@Id 
 	private Integer codigo;
 	
 	private String nome;
