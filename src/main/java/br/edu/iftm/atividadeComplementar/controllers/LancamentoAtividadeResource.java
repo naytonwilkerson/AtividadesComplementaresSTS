@@ -1,6 +1,7 @@
 package br.edu.iftm.atividadeComplementar.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +21,16 @@ public class LancamentoAtividadeResource {
 	private LancamentoAtividadeService service;
 
 	@RequestMapping(value = "like/{codigo}", method = RequestMethod.GET)
-	public ResponseEntity<?> findByNome(@PathVariable Integer codigo) {
-		List<LancamentoAtividade> lancamentoAtividade = service.buscar(codigo);
+	public ResponseEntity<?> findByNome(@PathVariable Long codigo) {
+		Optional<LancamentoAtividade> lancamentoAtividade = service.buscarCodigo(codigo);
 		return ResponseEntity.ok().body(lancamentoAtividade);
 	}
+	
+	@RequestMapping( method = RequestMethod.GET)
+	public ResponseEntity<?> findAll(){
+		List<LancamentoAtividade> lancamentoAtividade = service.buscarTodos();
+		return ResponseEntity.ok().body(lancamentoAtividade);
+	}
+	
 
 }

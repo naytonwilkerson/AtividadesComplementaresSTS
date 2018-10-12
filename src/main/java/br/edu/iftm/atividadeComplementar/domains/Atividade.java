@@ -3,12 +3,15 @@ package br.edu.iftm.atividadeComplementar.domains;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Atividade {
 	
 	@Id 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer codigo;
 	
 	private String nome;
@@ -41,20 +44,6 @@ public class Atividade {
 		return getValorLimiteHorasAtividade(totalhorasComplementares) * percentualCargaHoraria / 100; 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	public Integer getCodigo() {
 		return codigo;
 	}

@@ -1,7 +1,11 @@
 package br.edu.iftm.atividadeComplementar.domains;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Aluno {
@@ -10,6 +14,9 @@ public class Aluno {
 	private Long ra;
 	
 	private String nome;
+	
+	@OneToMany(fetch=FetchType.EAGER)
+	private List<LancamentoAtividade> atividade;
 
 	public Aluno(Long ra, String nome) {
 		super();

@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.iftm.atividadeComplementar.domains.Atividade;
 import br.edu.iftm.atividadeComplementar.domains.LancamentoAtividade;
 import br.edu.iftm.atividadeComplementar.repositories.LancamentoAtividadeRepository;
 
@@ -16,14 +15,11 @@ public class LancamentoAtividadeService {
 	@Autowired
 	private LancamentoAtividadeRepository repository;
 
-	public List<LancamentoAtividade> buscar(Integer codigo) {
-		return repository.findByNomeContaining(codigo);
-	}
-	public Optional<Atividade> buscarRa(Integer codigo) {
+	public Optional<LancamentoAtividade> buscarCodigo(Long codigo) {
 		return repository.findById(codigo);
 	}
 	
-	public List<Atividade> buscarTodos() {
+	public List<LancamentoAtividade> buscarTodos() {
 		return repository.findAll();
 	}
 }

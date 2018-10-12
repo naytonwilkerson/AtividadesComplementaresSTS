@@ -23,8 +23,17 @@ public class AlunoService {
 		return repository.findById(ra);
 	}
 	
+	public void salvarAtualizar(Aluno aluno) {
+		repository.save(aluno);
+	}
+	
 	public List<Aluno> buscarTodos() {
 		return repository.findAll();
+	}
+
+	public void excluir(Long id) {
+		repository.deleteById(id);
+		
 	}
 	
 }
