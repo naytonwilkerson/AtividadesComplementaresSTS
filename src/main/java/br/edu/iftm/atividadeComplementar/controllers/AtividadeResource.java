@@ -1,6 +1,7 @@
 package br.edu.iftm.atividadeComplementar.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,5 +25,17 @@ public class AtividadeResource {
 		List<Atividade> Atividade = service.buscar(nome);
 		return ResponseEntity.ok().body(Atividade);
 
+	}
+
+	@RequestMapping(value = "{codigo}", method = RequestMethod.GET)
+	public ResponseEntity<?> findByRa(@PathVariable Long codigo) {
+		Optional<Atividade> atividades = service.buscarRa(codigo);
+		return ResponseEntity.ok().body(atividades);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<?> findAll() {
+		List<Atividade> atividades = service.buscarTodos();
+		return ResponseEntity.ok().body(atividades);
 	}
 }

@@ -19,7 +19,7 @@ public class AtividadeService {
 		return repository.findByNomeContaining(nome);
 	}
 
-	public Optional<Atividade> buscarRa(Integer codigo) {
+	public Optional<Atividade> buscarRa(Long codigo) {
 		return repository.findById(codigo);
 	}
 
