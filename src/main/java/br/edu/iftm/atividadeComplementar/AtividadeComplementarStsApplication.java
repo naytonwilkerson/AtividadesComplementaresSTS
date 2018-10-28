@@ -20,6 +20,7 @@ public class AtividadeComplementarStsApplication implements CommandLineRunner {
 	@Autowired
 	AlunoRepository alunoRepository;
 	
+	@Autowired
 	AtividadeRepository atividadeRepository;
 	
 	public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class AtividadeComplementarStsApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
- 		Aluno aluno1 = new Aluno((long) 0001, "Nayton");
+ 		Aluno aluno1 = new Aluno((long) 0001, "nayton");
 		Aluno aluno2 = new Aluno((long) 0002, "Jão");
  		List<Aluno> alunos = new ArrayList<>();
 		alunos.add(aluno1);

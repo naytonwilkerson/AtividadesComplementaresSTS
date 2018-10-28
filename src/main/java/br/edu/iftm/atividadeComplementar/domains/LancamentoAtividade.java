@@ -27,6 +27,7 @@ public class LancamentoAtividade {
 
 	private Date dataFim;
 
+	@Autowired
 	@ManyToOne
 	private Aluno aluno;
 

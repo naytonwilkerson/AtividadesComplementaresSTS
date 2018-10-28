@@ -17,14 +17,14 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AlunoControllerTest {
+public class AtividadeControllerTest {
 	
 	@Autowired
 	private WebApplicationContext context;
 	
 	private MockMvc mvc;
 	
-	String url = "/alunos/59320492";
+	String url = "/atividade/59320492";
 	
 	@Before
 	public void setup() {
